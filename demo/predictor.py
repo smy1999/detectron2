@@ -126,6 +126,7 @@ class VisualizationDemo(object):
                 yield process_predictions(frame, predictions)
         else:
             for frame in frame_gen:
+                # print(self.predictor(frame))
                 yield process_predictions(frame, self.predictor(frame))
 
 
