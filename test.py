@@ -1,7 +1,5 @@
 import argparse
 
-import tqdm
-
 
 def get_parser():
     parser = argparse.ArgumentParser(description="Detectron2 demo for builtin configs")
@@ -48,6 +46,7 @@ class b:
 
 
 def test_tqdm():
+    import tqdm
     oa = a()
     ob = b()
     for q, (w, e, r) in tqdm.tqdm(zip(oa, ob), total=3):
@@ -56,6 +55,16 @@ def test_tqdm():
             break
 
 
+def test_cv():
+    import cv2
+    n = cv2.imread('/Users/smy1999/Desktop/detectron2/data/images/0ace96c3-48481887.jpg')
+    cv2.imshow("", n)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+
 if __name__ == "__main__":
-    test_tqdm()
+    test_cv()
+    # test_tqdm()
 
